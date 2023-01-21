@@ -4,6 +4,8 @@ module RandomName
         "Dirty Vagrant",
         "Angry Drunkard",
         "Sharp-Eyed Gambler",
+        "Weasley Cur",
+        "Greasey looking Thug"
     ]
 
     RANDOM_NAMES = [       

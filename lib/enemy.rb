@@ -1,3 +1,5 @@
+require "./random_name_class.rb"
+
 class Enemy
 
     def initialize(current_character)

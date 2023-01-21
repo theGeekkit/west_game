@@ -1,3 +1,6 @@
+require "./text_style.rb"
+
+
 class Character
     attr_accessor :name
     attr_accessor :class
@@ -89,12 +92,90 @@ class Character
     def fill_inventory
       inventory_array = []
       if @class == Character::CHARACTER_CLASSES[0]
-        add_to_inventory("Colt Model 1878 Coach Shotgun")
+        add_to_inventory("Coach Shotgun")
       elsif @class == Character::CHARACTER_CLASSES[1]
-        add_to_inventory("Winchester Model 1876 Lever Action Rifle")
+        add_to_inventory("Winchester Rifle")
       elsif @class == Character::CHARACTER_CLASSES[2]
-        add_to_inventory("Colt Model 1892 Double Action Revolver")
+        add_to_inventory("Colt Revolver")
       end
       @equipped_weapon = @inventory[0]
     end
+    def add_to_inventory(new_item)
+      @inventory.push(new_item)
+      sleep 1
+      puts "You got a #{new_item}! Don't lose it!".green
+      sleep 1
+    end
   
+    def get_inventory
+      @inventory
+    end
+  
+    def change_weapon(new_weapon)
+      @equipped_weapon = new_weapon
+    end
+  
+    def get_weapon
+      @equipped_weapon
+    end
+  
+    def set_gold(gold_amt, add_gold)
+      if add_gold == false && gold_amt > @_gold
+        @gold = 0
+      elsif add_gold == true
+        @gold = @gold + gold_amt
+      elsif add_gold == false
+        @gold = @gold - gold_amt
+      end
+    end
+  
+    def get_gold
+      @gold
+    end
+## EXP
+
+def add_exp(exp_amt)
+  @exp_points += exp_amt
+  level_up_check
+end
+
+def level_up_check
+  if @exp_points >= @next_level_exp
+    level_up
+  end
+end
+
+def get_exp_to_level
+  @next_level_exp - @exp_points
+end
+
+## Level
+
+def level_up
+  @level += 1
+  @exp_points = @exp_points - @next_level_exp
+  puts "You leveled up!".green
+  @next_level_exp += 5
+  @hp_max += 2
+  @hp = @hp_max
+  @atk += @atk * 0.5
+  puts "Level: #{@level}".green
+  puts "Health: #{@hp}".green
+  puts "Attack: #{@atk}".green
+end
+
+def get_level
+  @level
+end
+
+def get_next_exp
+  @next_level_exp
+end
+
+def get_atk
+  @atk
+end
+
+## Map Location
+
+end
