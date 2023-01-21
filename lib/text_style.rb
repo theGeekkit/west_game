@@ -78,7 +78,7 @@ class String
     end
 
 end
-def slow_text(sleep_time = 0.05)
+def slow_text(sleep_time = 0.04)
     yield.each_char { |c| putc c; $stdout.flush; sleep sleep_time }
         puts
     end
