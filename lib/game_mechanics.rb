@@ -20,12 +20,12 @@ class Game
       puts
       puts "Oh no! You spot a level #{enemy.get_level} #{enemy.get_name}!".red
       sleep 2
-      puts "Fight! Fight! Fight!".green
+      puts "Fight!".green
 
 
       while enemy.get_alive? == true
-      
-      
+
+
 
       puts
 
@@ -36,9 +36,9 @@ class Game
       puts "#{enemy.get_name} attacks you for #{enemy.get_atk}!".red.bold
       @current_character.change_hp(enemy.get_atk, "loss")
       break if @current_character.get_status == false
-      puts  
+      puts
       sleep 1
-      puts "Are you going to let them get away with that??"
+      puts "You just gonna stand there?"
       puts "Enter something to yell as you shoot!"
       print "> ".green
       player_words = gets.chomp
@@ -61,14 +61,13 @@ class Game
         puts
         puts "You have beaten #{enemy.get_name}!"
         @current_character.add_exp(enemy.get_worth_exp)
-        @current_character.set_gold(enemy.get_gold, true)
+        @current_character.set_gold(enemy.get_dollars, true)
         puts
         puts "You got #{enemy.get_worth_exp} EXP!".green
         puts "You are level #{@current_character.get_level}"
         puts "#{@current_character.get_exp_to_level} to the next level!"
         puts
-        puts "You got #{enemy.get_gold} gold!".yellow
-        puts "You have #{@current_character.get_gold} gold!".yellow
+        puts "You got #{enemy.get_dollars_character.get_dollars} dollars!".yellow
         sleep 2
         break
       end
@@ -84,7 +83,7 @@ class Game
       $map.return_to_menu
     end
 
-   
+
   end
 
   def game_over
@@ -92,11 +91,11 @@ class Game
 
 
 
-    ░█──░█ █▀▀█ █──█ 　 ░█▀▀▄ ─▀─ █▀▀ █▀▀▄ 
-    ░█▄▄▄█ █──█ █──█ 　 ░█─░█ ▀█▀ █▀▀ █──█ 
+    ░█──░█ █▀▀█ █──█ 　 ░█▀▀▄ ─▀─ █▀▀ █▀▀▄
+    ░█▄▄▄█ █──█ █──█ 　 ░█─░█ ▀█▀ █▀▀ █──█
     ──░█── ▀▀▀▀ ─▀▀▀ 　 ░█▄▄▀ ▀▀▀ ▀▀▀ ▀▀▀─
-                                                   
-    
+
+
     BIG_TEXT
 
     puts
@@ -116,30 +115,30 @@ class Game
       sleep 1
       puts <<-'BIG_TEXT'
 
-      _____ _                 _           __            
-      |_   _| |__   __ _ _ __ | | _____   / _| ___  _ __ 
+      _____ _                 _           __
+      |_   _| |__   __ _ _ __ | | _____   / _| ___  _ __
         | | | '_ \ / _` | '_ \| |/ / __| | |_ / _ \| '__|
-        | | | | | | (_| | | | |   <\__ \ |  _| (_) | |   
-        |_| |_| |_|\__,_|_| |_|_|\_\___/ |_|  \___/|_|   
-                                                         
-             _             _             _ 
+        | | | | | | (_| | | | |   <\__ \ |  _| (_) | |
+        |_| |_| |_|\__,_|_| |_|_|\_\___/ |_|  \___/|_|
+
+             _             _             _
        _ __ | | __ _ _   _(_)_ __   __ _| |
       | '_ \| |/ _` | | | | | '_ \ / _` | |
       | |_) | | (_| | |_| | | | | | (_| |_|
       | .__/|_|\__,_|\__, |_|_| |_|\__, (_)
-      |_|            |___/         |___/   
+      |_|            |___/         |___/
 
 
       BIG_TEXT
 
 
       puts
-      puts 
+      puts
       slow_text do
         "Your love is like bad medicine
       Bad medicine is what I need".red
       end
-      slow_text do             
+      slow_text do
         "Oh, oh, oh, shake it up, just like bad medicine
       You got the potion that can cure my disease".red
         end

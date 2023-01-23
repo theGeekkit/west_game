@@ -7,69 +7,62 @@ class Location
     @@castle_location = 3
     @@location_descriptions = {
         "mountain" => """
-You find yourself standing at the base of a towering mountain. 
-The rough, rocky terrain stretches up before you, leading to a jagged peak that disappears into the clouds above. 
-The air is thin and crisp, and the sound of the wind whipping through the crags and crevices of the mountain is the only thing you can hear.",
+You find yourself standing at the base of a towering mountain.
+The rough, rocky terrain rises up, leading to a sharp peak that goes into the clouds.
+The air is filled with the music of whistles and screaming wind rushing through.",
         "lake" => """
-As you continue on your journey, you find yourself walking along the shores of a serence lake. 
-The calm water reflects the blue sky above you. 
+As you continue on your journey, you find yourself walking along the shores of a serence lake.
+The calm water reflects the blue sky above you.
 You watch as a family of ducks slide into the water as your grow near.""",
         "grasslands" => """
 Tall grass stretches out before you, as far as you can see.
 The sound of small birds chirping and insects buzzing about fills the air around you.""",
-        "tarpit" => """
-Ahead of you lies a vast tar pit. 
-The ground feels like syrup. 
-Thick, sticky.. it grabs at your feet as you walk. 
-The sent of decay fills the air. 
-The only trees that survive here are blacked and twisted.""",
         "forest" => """
-The trail you're following winds into a dense forest. 
-The trees here are tall and ancient, their branches only let in small streams of sunlight. 
-The air smells thick with the scent of recent rain. 
+The trail you're following winds into a dense forest.
+The trees here are tall and ancient, their branches only let in small streams of sunlight.
+The air smells thick with the scent of recent rain.
 You hear small creatues scurrying away as you approach.""",
         "ruins" => """
-Just up ahead you spot some sort of structures. A town? 
+Just up ahead you spot some sort of structures. A town?
 As you near, you start to realize it's abandonded.
-In fact... it hasn't been occupied for a very long time. 
-The buildings are covered with vines, their wood walls creak and groan in the wind. 
+In fact... it hasn't been occupied for a very long time.
+The buildings are covered with vines, their wood walls creak and groan in the wind.
 Nature is hard at work, taking back her land.",
         "desert" => """
-In front of you there is sloping dunes of sun baked sand. 
-The land ahead sparkles in the intense sunlight. 
-Wind whips through the dunes, picking up particles. 
+In front of you there is sloping dunes of sun baked sand.
+The land ahead sparkles in the intense sunlight.
+Wind whips through the dunes, picking up particles.
 You squint your eyes as you try to continue.""",
         "bone_orchard" => """
-A graveyard stretches out before you. 
-Rows of weathered headstones stand as silent monuments to the passage of time. 
-You feel uneasy. 
-The ground below your feet is loose and uneven. 
-The air feels damp and smells of mold.""",
+A graveyard stretches out before you.
+Rows of weathered headstones stand as silent monuments to the passage of time.
+You feel uneasy as every little sound catches your attention.
+It feels wrong to stand here, as you begin to ponder your mortality.""",
         "stream" => """
-A bubbling stream winds its way through the landscape ahead. 
-The water is blue and so clear that you can see fish. 
+A bubbling stream winds its way through the landscape ahead.
+The water is blue and so clear that you can see fish.
 You feel a refreshing breeze.""",
         "wasteland" => """
-The sky above you suddenly darkens. 
-Shadows grow and the wind howls. 
-The land is filled with the bones of animals unfortunate enough to venture here. 
+The sky above you suddenly darkens.
+Shadows grow and the wind howls.
+The land is filled with the bones of animals unfortunate enough to venture here.
 Nothing survives in this place for long. Best to move along quickly.""",
         "castle" => """
-An ancient castle stands before you. 
-The grey stone walls are tall and formidable. 
-A deep and digusting moat surrounds it. 
+An ancient castle stands before you.
+The grey stone walls are tall and formidable.
+A deep and digusting moat surrounds it.
 The wooden drawbridge is open, as if to invite you inside...""",
         "shop" => """
-The air is filled with the chatter of people going about their daily business. 
-Just up ahead is a busy town square. 
-Local merchants have set up shop to peddle their wares. 
-Chickens cluck from metal cages, vegetables lay in woven baskets, but it's the local blacksmith shop that catches your eye. 
+The air is filled with the chatter of people going about their daily business.
+Just up ahead is a busy town square.
+Local merchants have set up shop to peddle their wares.
+Chickens cluck from metal cages, vegetables lay in woven baskets, but it's the local blacksmith shop that catches your eye.
 You peer through the window to take a look at their offerings."""
 
     }
 
     attr_accessor :loot_check, :enemy_check, :shop_check, :shop, :castle
-    
+
     def initialize
         @@location_counter += 1
         @shop = false
@@ -81,10 +74,10 @@ You peer through the window to take a look at their offerings."""
         @loot_check = loot?
         @shop_check = shop?
         @castle_check = castle?
-        
+
 
         init_location
-       
+
     end
 
     def run
@@ -102,7 +95,7 @@ You peer through the window to take a look at their offerings."""
                      |.: |__| .   : |__| :.|
                      |  :|. :  ...   : |.  |
                      | .    .  ||| .      :|
-                
+
 
                 BIG_TEXT
         end
@@ -128,7 +121,7 @@ You peer through the window to take a look at their offerings."""
         else
             set_land
         end
-           
+
     end
 
     def roll_for_castle
@@ -138,7 +131,7 @@ You peer through the window to take a look at their offerings."""
         end
 
         @@castle_location = rand_num
-        
+
 
     end
 
@@ -197,8 +190,8 @@ You peer through the window to take a look at their offerings."""
             land_type = "wasteland"
             @description = @@location_descriptions["#{land_type}"]
         end
-        
-       
+
+
     end
 
     def roll_enemy
