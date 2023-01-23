@@ -1,4 +1,4 @@
-require "./slow_text.rb"
+require "./text_style.rb"
 require "./character.rb"
 require "./enemy.rb"
 

@@ -1,5 +1,10 @@
 
-require './text_style.rb'
+require "./text_style.rb"
+require "./map.rb"
+require "./character.rb"
+require "./random_name_class.rb"
+require "./game_mechanics.rb"
+require "./auth.rb"
 
 def intro
   puts
@@ -45,7 +50,7 @@ end
 intro
 
 puts <<~'BIG_TEXT'
-    
+
   █████████████████████████████████████████████████████████████████████
   █▄─▄─▀██▀▄─██▄─▄▄▀███▄─▀█▀─▄█▄─▄▄─█▄─▄▄▀█▄─▄█─▄▄▄─█▄─▄█▄─▀█▄─▄█▄─▄▄─█
   ██─▄─▀██─▀─███─██─████─█▄█─███─▄█▀██─██─██─██─███▀██─███─█▄▀─███─▄█▀█
