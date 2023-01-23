@@ -18,7 +18,7 @@ class Game
 
       puts
       puts
-      puts "Oh no! You spot a level #{enemy.get_level} #{enemy.get_name}!".red
+      puts "You spot a level #{enemy.get_level} #{enemy.get_name}!".red
       sleep 2
       puts "Fight!".green
 
@@ -39,7 +39,7 @@ class Game
       puts
       sleep 1
       puts "You just gonna stand there?"
-      puts "Enter something to yell as you shoot!"
+      puts "Enter something to holler as you shoot!"
       print "> ".green
       player_words = gets.chomp
 
@@ -102,8 +102,8 @@ class Game
     puts "Well, the Bone Orchard keeps growing".red
     puts
     sleep 2
-    puts "Wanna try again?".green
-    puts "You'll keep your level and items but I'm taking all #{$current_character.get_gold} of your gold.".green
+    puts "Try again?".green
+    puts "You'll keep your level and items but I'm taking all #{$current_character.get_dollars} of your dollars.".green
     puts "Y/N?".yellow
     print "> ".green
     input = gets.chomp

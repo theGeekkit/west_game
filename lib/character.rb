@@ -5,11 +5,11 @@ class Character
     attr_accessor :name
     attr_accessor :class
     attr_accessor :hp
-    attr_accessor :inventory, :gold
+    attr_accessor :inventory, :dollars
     attr_accessor :level
     attr_accessor :exp_points
     attr_accessor :location
-  
+
     def initialize
       @name = ""
       @class = "Tough"
@@ -17,68 +17,68 @@ class Character
       @hp_max = 12
       @atk = 5
       @inventory = []
-      @gold = 0
+      @dollars = 0
       @level = 1
       @exp_points = 0
       @next_level_exp = 10
       @alive = true
       @equipped_weapon = "Colt Model 1878 Coach Shotgun"
       @location = 0
-     
+
     end
-  
+
     CHARACTER_CLASSES = [
       "Tough",
       "Scout",
       "Gunslinger",
     ]
-  
+
     ## Name
-  
+
     def set_name(name)
       @name = name
     end
-  
+
     def get_name
       @name
     end
-  
+
     ## Class
     def set_class(class_input)
       @class = class_input
       fill_inventory
     end
-  
+
     def get_class
       @class
     end
-  
+
     ## HP
-  
+
     def change_hp(hp_amount, gain_or_loss)
       if gain_or_loss == "gain"
         @hp = @hp + hp_amount
       elsif gain_or_loss == "loss"
         @hp = @hp - hp_amount
       end
-  
+
       check_status
     end
-  
+
     def get_hp
       @hp
     end
-  
+
     def get_status
       @alive
     end
-  
+
     def revive
-      @gold = 0
+      @dollars = 0
       @alive = true
       @hp = @_hp_max
     end
-  
+
     def check_status
       if @hp <= 0
         @alive = false
@@ -86,9 +86,9 @@ class Character
         @alive = true
       end
     end
-  
+
     ## Inventory
-  
+
     def fill_inventory
       inventory_array = []
       if @class == Character::CHARACTER_CLASSES[0]
@@ -106,31 +106,31 @@ class Character
       puts "You got a #{new_item}! Don't lose it!".green
       sleep 1
     end
-  
+
     def get_inventory
       @inventory
     end
-  
+
     def change_weapon(new_weapon)
       @equipped_weapon = new_weapon
     end
-  
+
     def get_weapon
       @equipped_weapon
     end
-  
-    def set_gold(gold_amt, add_gold)
-      if add_gold == false && gold_amt > @_gold
-        @gold = 0
-      elsif add_gold == true
-        @gold = @gold + gold_amt
-      elsif add_gold == false
-        @gold = @gold - gold_amt
+
+    def set_dollars(dollars_amt, add_dollars)
+      if add_dollars == false && dollars_amt > @_dollars
+        @dollars = 0
+      elsif add_dollars == true
+        @dollars = @dollars + dollars_amt
+      elsif add_dollars == false
+        @dollars = @dollars - dollars_amt
       end
     end
-  
-    def get_gold
-      @gold
+
+    def get_dollars
+      @dollars
     end
 ## EXP
 
