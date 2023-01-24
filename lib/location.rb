@@ -136,8 +136,8 @@ Chickens cluck from metal cages, vegetables lay in woven baskets, but it's the l
         @@shop_location = rand_num
     end
 
-    def set_castle
-        @description = @@location_descriptions["castle"]
+    def set_fort
+        @description = @@location_descriptions["fort"]
         @fort = true
 
     end
@@ -220,8 +220,8 @@ Chickens cluck from metal cages, vegetables lay in woven baskets, but it's the l
         end
     end
 
-    def castle?
-        if @castle == true
+    def fort?
+        if @fort == true
             true
         else
             false

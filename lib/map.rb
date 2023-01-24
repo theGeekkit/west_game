@@ -1,5 +1,6 @@
 require "./location.rb"
 
+
 class Map
   def initialize
     @house = "    H "

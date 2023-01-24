@@ -1,4 +1,4 @@
-$item_stats = {
+$item_stats =
     {coach_shotgun: "Coach Shotgun", atk: 5, desc: "Colt Model 1878 Coach Shotgun,
     reliable double barrel shotgun."
     }
@@ -11,5 +11,5 @@ $item_stats = {
     {old_reliable: "Old Reliable", atk: 5, desc: "Sharps 1874 Rifle,
     old reliable rifle that has felled countless buffalo."
     }
-}
-end
+
+

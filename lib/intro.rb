@@ -1,10 +1,11 @@
-
 require "./text_style.rb"
 require "./map.rb"
 require "./character.rb"
 require "./random_name_class.rb"
 require "./game_mechanics.rb"
 require "./auth.rb"
+require "./enemy.rb"
+require "./menu.rb"
 
 def intro
   puts
