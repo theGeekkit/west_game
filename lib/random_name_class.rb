@@ -1,3 +1,4 @@
+
 module RandomName
 
     RANDOM_CLASSES = [

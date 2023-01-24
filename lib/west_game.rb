@@ -1,6 +1,6 @@
 # frozen_string_literal: true
-
-require_relative "west_game/version"
+require "./intro.rb"
+require "./west_game/version"
 
 
 

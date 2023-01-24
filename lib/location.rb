@@ -1,5 +1,5 @@
-require './lib/menu.rb'
-require './lib/text_style.rb'
+require './menu.rb'
+require './text_style.rb'
 
 class Location
     @@location_counter = 0
@@ -7,11 +7,11 @@ class Location
     @@fort_location = 3
     @@location_descriptions = {
         "mountain" => """
-You find yourself standing at the base of a towering rockface.
+You see before you the base of a towering rockface.
 The rough, rocky terrain rises up, leading to a sharp peak that goes into the clouds.
 The air is filled with the music of whistles and screaming wind rushing through.",
         "lake" => """
-You find yourself walking along the shores of a small lake.The calm water beckons you to take a dip.
+You are walking along the shores of a small lake. The calm water beckons you to take a dip.
 You watch as ducks fly off when you approach.""",
         "grasslands" => """
 Tall grass stretches out before you, as far as you can see. Waves ripple across it like a sea

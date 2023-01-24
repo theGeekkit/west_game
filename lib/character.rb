@@ -1,4 +1,5 @@
 require "./text_style.rb"
+require "./items.rb"
 
 
 class Character

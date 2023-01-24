@@ -1,5 +1,5 @@
-require "./location.rb"
-require "./text_style.rb"
+require_relative "./location.rb"
+require_relative "./text_style.rb"
 
 module Menu
   @@location = nil
